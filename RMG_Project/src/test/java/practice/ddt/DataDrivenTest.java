@@ -1,0 +1,25 @@
+package practice.ddt;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class DataDrivenTest {
+	
+	@DataProvider
+	public Object[][] getData()
+	{
+		Object[][] arr=new Object[2][2];
+		arr[0][0]="Test Yantra";
+		arr[0][1]="Technology";
+		arr[1][0]="Amazon";
+		arr[1][1]="E-Commerce";
+		return arr;
+	}
+	
+	@Test(dataProvider="getData")
+	public void test(String name, String dropdown)
+	{
+		System.out.println(name+"\t"+dropdown);
+	}
+
+}
